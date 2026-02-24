@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecipeMind AI</title>
+    <link rel="stylesheet" href="css/chat.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <div class="chat-container">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="app-title">
+                    <i class="fas fa-utensils"></i>
+                    <h1>RecipeMind AI</h1>
+                </div>
+                <!-- Mode Buttons -->
+                <div class="mode-buttons">
+                    <button id="national-food-btn" class="mode-btn">
+                        <i class="fas fa-hamburger"></i>
+                        Makanan Nasional
+                    </button>
+                    <button id="national-drink-btn" class="mode-btn">
+                        <i class="fas fa-glass-cheers"></i>
+                        Minuman Nasional
+                    </button>
+                    <button id="international-food-btn" class="mode-btn">
+                        <i class="fas fa-globe-americas"></i>
+                        Makanan Internasional
+                    </button>
+                    <button id="international-drink-btn" class="mode-btn">
+                        <i class="fas fa-cocktail"></i>
+                        Minuman Internasional
+                    </button>
+                    <button id="dessert-btn" class="mode-btn">
+                        <i class="fas fa-ice-cream"></i>
+                        Dessert
+                    </button>
+                    <button id="general-btn" class="mode-btn">
+                        <i class="fas fa-home"></i>
+                        Mode General
+                    </button>
+                </div>
+                <div class="sidebar-content">
+                    <button id="newChatBtn" class="new-chat-btn">
+                        <i class="fas fa-plus"></i> New Chat
+                    </button>
+                    <div id="chatsList" class="chats-list">
+                        <!-- Chat history will be loaded here -->
+                    </div>
+                </div>
+                <!-- User Profile -->
+                <div class="user-profile">
+                    <div class="user-profile-button" onclick="toggleUserMenu()">
+                        <i class="fas fa-user"></i>
+                        <span class="username-text"></span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="user-menu" id="userMenu">
+                        <div class="user-menu-item" onclick="logout()">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Logout
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Chat Area -->
+            <div class="main-chat">
+                <div id="chatMessages" class="chat-messages">
+                    <!-- Messages will appear here -->
+                </div>
+                <div class="chat-input-wrapper">
+                    <div class="chat-input-container">
+                        <textarea 
+                            id="messageInput" 
+                            placeholder="Tanyakan tentang resep..."
+                            rows="1"
+                        ></textarea>
+                        <button id="sendButton" class="send-button">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notification-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="js/chatAI.js"></script>
+</body>
+</html>
